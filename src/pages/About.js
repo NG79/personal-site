@@ -18,7 +18,7 @@ const LinkRenderer = ({ ...children }) => <Link {...children} />;
 const About = () => (
   <Main
     title="About"
-    description="Learn about Michael D'Angelo"
+    description="Learn about Nandini Govindarajan"
   >
     <article className="post markdown" id="about">
       <header>
@@ -28,6 +28,7 @@ const About = () => (
         </div>
       </header>
       <ReactMarkdown
+        class="about-bullets"
         source={markdown}
         renderers={{
           Link: LinkRenderer,

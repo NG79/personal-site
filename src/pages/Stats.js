@@ -1,26 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+import { Route, BrowserRouter } from 'react-router-dom';
 
 import Main from '../layouts/Main';
+import AllPosts from '../components/Stats/AllPosts';
+import OnePost from '../components/Stats/OnePost';
 
-import Personal from '../components/Stats/Personal';
-import Site from '../components/Stats/Site';
-
-const Stats = () => (
+const Blog = () => (
   <Main
-    title="Stats"
-    description="Some statistics about Michael D'Angelo and mldangelo.com"
+    title="Blog"
+    description="Learn about Nandini Govindarajan's Blog."
   >
-    <article className="post" id="stats">
-      <header>
-        <div className="title">
-          <h2 data-testid="heading"><Link to="/stats">Stats</Link></h2>
-        </div>
-      </header>
-      <Personal />
-      <Site />
-    </article>
+    <div className="blog-main">
+      <div>
+        <BrowserRouter>
+          <div className="blog-content">
+            <Route component={AllPosts} path="/stats/" exact />
+            <Route component={OnePost} path="/:slug" />
+          </div>
+        </BrowserRouter>
+      </div>
+    </div>
   </Main>
 );
 
-export default Stats;
+export default Blog;

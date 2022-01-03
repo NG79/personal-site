@@ -3,11 +3,17 @@
 .markdown {
 
   p {
-    margin: auto;
+    margin: 1em;
   }
 
   h1 {
     font-size: .8em;
     margin-top: 3em;
+    list-style-position: inside;
+  }
+
+  li {
+    list-style-type: none;
+    font-size: 1em;
   }
 }

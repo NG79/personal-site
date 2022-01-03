@@ -36,3 +36,13 @@
 			display: block;
 		}
 	}
+
+	#index-container {
+		display:flex;
+		flex-direction: row;
+		justify-content: flex-start;
+	}
+
+	#index-container.item {
+		flex-shrink: 2;
+	}

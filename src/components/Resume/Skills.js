@@ -1,108 +1,30 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 
-import CategoryButton from './Skills/CategoryButton';
-import SkillBar from './Skills/SkillBar';
-
-const handleProps = ({ categories, skills }) => ({
-  buttons: categories.map((cat) => cat.name).reduce((obj, key) => ({
-    ...obj,
-    [key]: false,
-  }), { All: true }),
-  skills,
-});
-
-class Skills extends Component {
-  constructor(props) {
-    super(props);
-    this.state = handleProps({ categories: props.categories, skills: props.skills });
-  }
-
-  getRows() {
-    // search for true active categories
-    const actCat = Object.keys(this.state.buttons).reduce((cat, key) => (
-      this.state.buttons[key] ? key : cat
-    ), 'All');
-
-    return this.state.skills.sort((a, b) => {
-      let ret = 0;
-      if (a.competency > b.competency) ret = -1;
-      else if (a.competency < b.competency) ret = 1;
-      else if (a.category[0] > b.category[0]) ret = -1;
-      else if (a.category[0] < b.category[0]) ret = 1;
-      else if (a.title > b.title) ret = 1;
-      else if (a.title < b.title) ret = -1;
-      return ret;
-    }).filter((skill) => (actCat === 'All' || skill.category.includes(actCat)))
-      .map((skill) => (
-        <SkillBar
-          categories={this.props.categories}
-          data={skill}
-          key={skill.title}
-        />
-      ));
-  }
-
-  getButtons() {
-    return Object.keys(this.state.buttons).map((key) => (
-      <CategoryButton
-        label={key}
-        key={key}
-        active={this.state.buttons}
-        handleClick={this.handleChildClick}
-      />
-    ));
-  }
-
-  handleChildClick = (label) => {
-    this.setState((prevState) => {
-      // Toggle button that was clicked. Turn all other buttons off.
-      const buttons = Object.keys(prevState.buttons).reduce((obj, key) => ({
-        ...obj,
-        [key]: (label === key) && !prevState.buttons[key],
-      }), {});
-      // Turn on 'All' button if other buttons are off
-      buttons.All = !Object.keys(prevState.buttons).some((key) => buttons[key]);
-      return { buttons };
-    });
-  }
-
-  render() {
-    return (
-      <div className="skills">
-        <div className="link-to" id="skills" />
-        <div className="title">
-          <h3>Skills</h3>
-          <p>Note: I think these sections are silly, but everyone seems to have one.
-            Here is a *mostly* honest overview of my skills.
-          </p>
-        </div>
-        <div className="skill-button-container">
-          {this.getButtons()}
-        </div>
-        <div className="skill-row-container">
-          {this.getRows()}
-        </div>
+export default function Skills() {
+  return (
+    <div className="skills">
+      <div className="link-to" id="skills" />
+      <div className="title">
+        <h3>Skills</h3>
       </div>
-    );
-  }
+      <div className="skill-container">
+        <h4 className="bizskill">Product Design and Development</h4>
+        <h4 className="techskill">Software Development</h4>
+        <h4 className="bizskill">Business Analysis and Consulting</h4>
+        <h4 className="techskill">Analytics: Strategy, Backend, Python for DS</h4>
+        <h4 className="bizskill">Leadership</h4>
+        <h4 className="techskill">Data Visualization: Tableau, Python </h4>
+        <h4 className="bizskill">Team Management</h4>
+        <h4 className="techskill">Web3 : Smart contracts, Solidity, Solana (basics)</h4>
+        <h4 className="bizskill">Strategy</h4>
+        <h4 className="techskill">Web Development : JS, React </h4>
+        <h4 className="bizskill">Sales and Business Development</h4>
+        <h4 className="techskill">Process Mining : Celonis</h4>
+        <h4 className="bizskill">Negotiation Skills</h4>
+        <h4 className="techskill">Github, VSCode, Replit, Figma, Sanity CMS</h4>
+        <h4 className="bizskill">eCommerce, Order Management</h4>
+        <h4 className="bizskill">Connecting the dots between Sales, Supply Chain and Finance</h4>
+      </div>
+    </div>
+  );
 }
-
-Skills.propTypes = {
-  skills: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string,
-    competency: PropTypes.number,
-    category: PropTypes.arrayOf(PropTypes.string),
-  })),
-  categories: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string,
-    color: PropTypes.string,
-  })),
-};
-
-Skills.defaultProps = {
-  skills: [],
-  categories: [],
-};
-
-export default Skills;

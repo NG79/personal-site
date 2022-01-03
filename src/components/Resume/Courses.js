@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import Course from './Courses/Course';
 
 const getRows = (courses) => courses.sort((a, b) => {
@@ -22,7 +21,7 @@ const Courses = ({ data }) => (
   <div className="courses">
     <div className="link-to" id="courses" />
     <div className="title">
-      <h3>Selected Courses</h3>
+      <h3> Self-Driven Education </h3>
     </div>
     <ul className="course-list">
       {getRows(data)}
@@ -33,7 +32,6 @@ const Courses = ({ data }) => (
 Courses.propTypes = {
   data: PropTypes.arrayOf(PropTypes.shape({
     title: PropTypes.string,
-    number: PropTypes.string,
     link: PropTypes.string,
     university: PropTypes.string,
   })),

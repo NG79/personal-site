@@ -2,6 +2,15 @@
 
 #resume {
 
+	.resume-summary >li::marker {
+		font-size: 1.4em;
+		color: #61DAFB;
+	}
+	.resume-summary >li {
+		list-style-type:none;
+	}
+	
+	
 	.link-to {
 		position: relative;
 		top: -4.5em;
@@ -11,6 +20,8 @@
 		text-decoration:none;
 		border-bottom: none;
 		display: inline-flex;
+		color: _palette(sections);
+		font-size: 1em;
 
 		a {
 				padding: 0 .5em;
@@ -23,11 +34,20 @@
 		.title {
 			text-align: center;
 			margin-bottom: 2em;
+			h3 {
+				color: _palette(sections);
+				font-size:1em;
+			}
 		}
+		
 	}
 	.experience {
 		.title {
 			text-align: center;
+			h3 {
+				color: _palette(sections);
+				font-size:1em;
+			}
 		}
 		.job {
 			margin: 1em;
@@ -42,7 +62,9 @@
 			li {
 				margin: 0;
 				padding: 0;
-					font-size: .9em;
+				font-size: 1em;
+				list-style-type: none;
+				font-family: _font(family)
 			}
 		}
 	}
@@ -51,6 +73,10 @@
 		padding-top: 1.6em;
 		.title {
 			text-align: center;
+			h3 {
+				color: _palette(sections);
+				font-size:1em;
+			}
 		}
 		.course-list {
 			text-align: center;
@@ -59,12 +85,20 @@
 				white-space: nowrap;
 			}
 		}
+		.video {
+			display:flex;
+			justify-content: center;
+		}
 	}
 
 	.skills {
 		margin-top: 2em;
 		.title {
 			text-align: center;
+			h3 {
+				color: _palette(sections);
+				font-size:1em;
+			}
 			p {
 				font-size: 0.9em;
 			}
@@ -74,6 +108,10 @@
 		margin: 2em 0;
 		.title {
 			text-align: center;
+			h3 {
+				color: _palette(sections);
+				font-size:1em;
+			}
 		}
 	}
 }
@@ -91,7 +129,7 @@
 		margin-bottom: .1em;
 		text-transform: none;
 		letter-spacing: 0.16em;
-		font-size: .8em;
+		font-size: 1.0em;
 	}
 
 	.school {
@@ -101,9 +139,6 @@
 	}
 }
 
-.courses .course-number {
-	display: inline;
-}
 .courses .course-name {
 	display: inline;
 	font-family: "Raleway", Helvetica, sans-serif;

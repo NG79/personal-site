@@ -12,12 +12,12 @@ import References from '../components/Resume/References';
 import courses from '../data/resume/courses';
 import degrees from '../data/resume/degrees';
 import positions from '../data/resume/positions';
-import { skills, categories } from '../data/resume/skills';
+import { skills } from '../data/resume/skills';
 
 const sections = [
-  'Education',
   'Experience',
   'Skills',
+  'Education',
   'Courses',
   'References',
 ];
@@ -25,27 +25,36 @@ const sections = [
 const Resume = () => (
   <Main
     title="Resume"
-    description="Michael D'Angelo's Resume. Arthena, Matroid, YC, Skeptical Investments, Stanford ICME, Planet Labs, and Facebook."
+    description="Nandini Govindarajan's Resume"
   >
     <article className="post" id="resume">
       <header>
         <div className="title">
-          <h2 data-testid="heading"><Link to="resume">Resume</Link></h2>
+          <h2 data-testid="heading"><Link to="resume"><u>Professional Summary</u></Link></h2>
+          <ul className="resume-summary">
+            <li><b>20</b> years of B2B <b>business transformation</b> experience</li>
+            <li>Thrive in <b>leadership roles</b> that blend business acumen and
+              technical depth
+            </li>
+            <li><b>Fast learner</b> with proven abiliity to learn, experiment and adapt
+            </li>
+            <li>Deeply interested in building <b>Web3</b> projects</li>
+          </ul>
           <div className="link-container">
             {sections.map((sec) => (
               <h4 key={sec}>
                 <a href={`#${sec.toLowerCase()}`}>{sec}</a>
               </h4>))}
           </div>
-
         </div>
       </header>
-      <Education data={degrees} />
-      <Experience data={positions} />
-      <Skills skills={skills} categories={categories} />
-      <Courses data={courses} />
-      <References />
-
+      <div className="resume-body">
+        <Experience data={positions} />
+        <Skills data={skills} />
+        <Education data={degrees} />
+        <Courses data={courses} />
+        <References />
+      </div>
     </article>
   </Main>
 );

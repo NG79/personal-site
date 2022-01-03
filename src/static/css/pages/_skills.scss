@@ -2,11 +2,23 @@
 
 .skills .title {
 	text-align: center;
+	border-bottom-style: solid;
 }
 
-.skill-button-container {
+.skill-container {
+	display: grid;
+	grid-template-columns: 200px 200px;
 	margin: 1.5em 0;
 	text-align: center;
+	grid-auto-flow: row;
+	justify-content: center;
+	grid-gap: 3px 5px;
+	h4 {
+		padding: 1px;
+	}
+	.techskill{
+		color: #398037;
+	}
 }
 
 .skillbutton {
