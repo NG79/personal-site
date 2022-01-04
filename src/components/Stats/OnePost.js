@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import imageUrlBuilder from '@sanity/image-url';
 import BlockContent from '@sanity/block-content-to-react';
+import dayjs from 'dayjs';
 import sanityClient from '../../client';
 
 const builder = imageUrlBuilder(sanityClient);
@@ -11,7 +12,7 @@ function urlFor(source) {
 
 export default function OnePost() {
   const [postData, setPostData] = useState(null);
-  const query = '*[slug.current == $slug]{ title, slug, mainImage{asset->{_id,url}}, body, "name": author->name, "authorImage": author->image}';
+  const query = '*[slug.current == $slug]{ title, publishedAt, slug, mainImage{asset->{_id,url}}, body, "name": author->name, "authorImage": author->image}';
   const { slug } = useParams();
 
   useEffect(() => {
@@ -26,9 +27,9 @@ export default function OnePost() {
     <div>
       <p data-testid="heading" className="blog-post-backto"><Link to="/stats">Back to all Posts</Link></p>
       <div className="post-heading">
+        <p className="post-date">{dayjs(postData.publishedAt).format('MMMM DD, YYYY')}</p>
         <h3 className="post-title">{postData.title}</h3>
         <img className="post-image" src={urlFor(postData.mainImage).width(200).url()} alt="main one" />
-        <p className="post-date">{postData.publishedAt}</p>
       </div>
       <div className="post-body">
         <BlockContent

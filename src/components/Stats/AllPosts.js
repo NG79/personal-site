@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import dayjs from 'dayjs';
 import sanityClient from '../../client';
 
 export default function AllPosts() {
   const [allPostsData, setAllPosts] = useState(null);
-  const query = '*[_type == "post"]{ title, slug, mainImage{asset->{_id,url}}}';
+  const query = '*[_type == "post"]{ title, publishedAt, slug, mainImage{asset->{_id,url}}}';
 
   useEffect(() => {
     sanityClient.fetch(query)
@@ -21,8 +22,9 @@ export default function AllPosts() {
           && allPostsData.map((post) => (
             <Link to={`/${post.slug.current}`} key={post.slug.current}>
               <span key={post.slug.current} className="blog-tile">
-                <span className="blog-post-title">
-                  <h4>{post.title}</h4>
+                <p className="blog-post-date">{dayjs(post.publishedAt).format('MMMM YYYY')}</p>
+                <span className="blog-header">
+                  <h6 className="blog-post-title">{post.title}</h6>
                 </span>
                 <img src={post.mainImage.asset.url} alt="main" className="tile-image" />
               </span>

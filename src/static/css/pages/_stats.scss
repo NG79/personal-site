@@ -42,24 +42,33 @@
   height: 200px;
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
-  border-radius: 2px;
+  border: 1px solid _palette(fg-bold);
+  border-radius: 5px;
   column-gap: 5px;
   margin: 10px;
 
+  .blog-header{
+    width: inherit;
+    object-fit: scale-down;
+    .blog-post-title{
+      font-size: 70%;
+    }
+  }
+
   .tile-image{
     width: inherit;
-    height: inherit;
+    max-height: 100px;
     object-fit: cover;
-    object-position: 20% 10%;
+    object-position: center bottom;
   }
-  .blog-post-title{
-    overflow-x: scroll;
+  .blog-post-date{
+    font-size: 10px;
   }
 }
 
 .blog-post-backto {
   text-align: left;
+  color: _palette(fg-bold);
 }
 .post-heading {
   display: flex;
@@ -73,7 +82,7 @@
   }
   .post-date {
     text-align: left;
-    color: _palette(fg)
+    color: _palette(fg);
   }
 }
 
