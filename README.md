@@ -9,4 +9,4 @@ Added Blog section, changed projects section, removed statistics and mofied othe
 
 Tested with: [node](https://nodejs.org/) >= v12 and optional [nvm](https://github.com/nvm-sh/nvm#installing-and-updating) for managing node versions.
 
-[Added in this adaptation]: CMS using Sanity.IO. Follow latest instructions from https://www.sanity.io/guides/build-your-first-blog-using-react to integrate cms into React. Please reach out if you run into issues integrating. 
+Added in this adaptation: CMS using Sanity.IO. Follow latest instructions from https://www.sanity.io/guides/build-your-first-blog-using-react to integrate cms into React. Please reach out if you run into issues integrating. 
