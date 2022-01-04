@@ -19,9 +19,9 @@ const SideBar = () => (
     </section>
 
     <section className="blurb">
-      <h3>Technology Enthusiast. MBA. Engineer. Coder. Mom. </h3>
+      <h3>Digital Transformation Professional. Technology Enthusiast. Builder. Mom. </h3>
       <h3>Non-fiction reader. Music lover. Blogger.
-        Rabbit hole seeker. Gardener. Hobby-Painter. Nature seeker.
+        Rabbit hole seeker. Gardener. Hobby-Painter. Nature lover.
       </h3>
       <ul className="actions">
         <li>

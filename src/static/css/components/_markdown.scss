@@ -2,18 +2,24 @@
 
 .markdown {
 
+  title {
+    text-align: left;
+  }
+
   p {
     margin: 1em;
+    text-align: left;
   }
 
   h1 {
     font-size: .8em;
     margin-top: 3em;
     list-style-position: inside;
+    text-align: left;
   }
 
   li {
-    list-style-type: none;
     font-size: 1em;
+    text-align: left;
   }
 }
