@@ -33,7 +33,7 @@ const pages = [
     component: Projects,
   },
   {
-    route: '/stats',
+    route: '/blog',
     heading: 'Stats',
     component: Stats,
   },

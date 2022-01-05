@@ -1,7 +1,7 @@
 
 # Intro
 
-I am enthusiastic business-technology leader who has spent 2 decades building solutions for B2B clients. I have served banking, healthcare, lifesciences and CPG clients. My clients and co-workers love my collaborative style of leadership, passion for learning and figuring things out, speaking up with honesty, and being hands-on.
+I am an enthusiastic business-technology leader who has spent 2 decades building solutions for B2B clients. I have served banking, healthcare, lifesciences and CPG clients. My clients and co-workers love my collaborative style of leadership, passion for learning and figuring things out, speaking up with honesty, and being hands-on.
 
 # Currently
 
@@ -40,3 +40,9 @@ I am looking for opportunities to build solutions with other curious minds in ou
 - During my maternity leave, I tried to learn R while also trying to be a mom for the first time. Slotted under #what-was-i-thinking!? :)
 
 - I have loved played business roles over the past 10 years, and will likely continue to do so, but just for fun, I kept working on my hands-on coding skills on the side. I learnt Python, Celonis for Process Mining, Tableau for data visualization, React, Javascript and now have begun Blockchain. Most of these were not expected of me on the job front, but knowing each skill has given me super powers in my business roles.
+
+# About this Site
+
+- Built using React, JS, Sanity.IO 
+
+- Site source code and other technical details at https://github.com/NG79/personal-site 

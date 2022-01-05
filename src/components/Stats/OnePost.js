@@ -25,7 +25,7 @@ export default function OnePost() {
 
   return (
     <div>
-      <p data-testid="heading" className="blog-post-backto"><Link to="/stats">Back to all Posts</Link></p>
+      <p data-testid="heading" className="blog-post-backto"><Link to="/blog">Back to all Posts</Link></p>
       <div className="post-heading">
         <p className="post-date">{dayjs(postData.publishedAt).format('MMMM DD, YYYY')}</p>
         <h3 className="post-title">{postData.title}</h3>

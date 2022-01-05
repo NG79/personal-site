@@ -16,7 +16,7 @@ export default function AllPosts() {
   return (
     <div>
       <div>
-        <h2 data-testid="heading"><Link to="/stats">Blog</Link></h2>
+        <h2 data-testid="heading"><Link to="/blog">Blog</Link></h2>
         <div className="blog-container">
           {allPostsData
           && allPostsData.map((post) => (

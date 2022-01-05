@@ -30,7 +30,7 @@ const Resume = () => (
     <article className="post" id="resume">
       <header>
         <div className="title">
-          <h2 data-testid="heading"><Link to="resume"><u>Professional Summary</u></Link></h2>
+          <h2 data-testid="heading"><Link to="resume">Professional Summary</Link></h2>
           <ul className="resume-summary">
             <li><b>20</b> years of B2B <b>business transformation</b> experience</li>
             <li>Thrive in <b>leadership roles</b> that blend business acumen and

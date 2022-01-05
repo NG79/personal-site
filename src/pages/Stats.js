@@ -15,7 +15,7 @@ const Blog = () => (
       <div>
         <BrowserRouter>
           <div className="blog-content">
-            <Route component={AllPosts} path="/stats/" exact />
+            <Route component={AllPosts} path="/blog/" exact />
             <Route component={OnePost} path="/:slug" />
           </div>
         </BrowserRouter>
