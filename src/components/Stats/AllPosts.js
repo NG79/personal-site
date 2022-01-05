@@ -5,7 +5,7 @@ import sanityClient from '../../client';
 
 export default function AllPosts() {
   const [allPostsData, setAllPosts] = useState(null);
-  const query = '*[_type == "post"]{ title, publishedAt, slug, mainImage{asset->{_id,url}}}';
+  const query = '*[_type == "post"] | order(publishedAt desc) { title, publishedAt, slug, mainImage{asset->{_id,url}}}';
 
   useEffect(() => {
     sanityClient.fetch(query)
