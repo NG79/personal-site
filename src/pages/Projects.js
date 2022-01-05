@@ -21,7 +21,7 @@ const Projects = () => (
     <article className="post" id="projects">
       <header>
         <div className="title">
-          <h2 data-testid="heading"><Link to="projects"><u>Projects</u></Link></h2>
+          <h2 data-testid="heading"><Link to="projects">Projects</Link></h2>
           <navbar className="typeofproject">
             {projsections.map((sec) => (
               <h3 key={sec}>

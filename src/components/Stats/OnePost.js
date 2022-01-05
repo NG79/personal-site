@@ -15,7 +15,7 @@ export default function OnePost() {
       .catch(console.error);
   }, [slug]);
 
-  if (!postData) return <div>Loading...</div>;
+  if (!postData) return <div>...</div>;
 
   return (
     <div>
