@@ -16,6 +16,7 @@ const Blog = () => (
     <article className="post" id="resume">
       <header>
         <h2 data-testid="heading"><Link to="/blog">Blog</Link></h2>
+        <p><i>(In Beta)</i> </p>
       </header>
       <div className="blog-main">
         <div>

@@ -38,7 +38,6 @@ const Resume = () => (
             </li>
             <li><b>Fast learner</b> with proven abiliity to learn, experiment and adapt
             </li>
-            <li>Deeply interested in building <b>Web3</b> projects</li>
           </ul>
           <div className="link-container">
             {sections.map((sec) => (
