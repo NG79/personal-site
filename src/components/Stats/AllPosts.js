@@ -14,24 +14,19 @@ export default function AllPosts() {
   }, []);
 
   return (
-    <div>
-      <div>
-        <h2 data-testid="heading"><Link to="/blog">Blog</Link></h2>
-        <div className="blog-container">
-          {allPostsData
-          && allPostsData.map((post) => (
-            <Link to={`/${post.slug.current}`} key={post.slug.current}>
-              <span key={post.slug.current} className="blog-tile">
-                <p className="blog-post-date">{dayjs(post.publishedAt).format('MMMM YYYY')}</p>
-                <span className="blog-header">
-                  <h6 className="blog-post-title">{post.title}</h6>
-                </span>
-                <img src={post.mainImage.asset.url} alt="main" className="tile-image" />
-              </span>
-            </Link>
-          ))}
-        </div>
-      </div>
+    <div className="blog-container">
+      {allPostsData
+      && allPostsData.map((post) => (
+        <Link to={`/${post.slug.current}`} key={post.slug.current}>
+          <span key={post.slug.current} className="blog-tile">
+            <p className="blog-post-date">{dayjs(post.publishedAt).format('MMMM YYYY')}</p>
+            <span className="blog-header">
+              <h6 className="blog-post-title">{post.title}</h6>
+            </span>
+            <img src={post.mainImage.asset.url} alt="main" className="tile-image" />
+          </span>
+        </Link>
+      ))}
     </div>
   );
 }

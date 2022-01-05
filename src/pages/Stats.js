@@ -1,6 +1,8 @@
 import React from 'react';
 
-import { Route, BrowserRouter } from 'react-router-dom';
+import {
+  Route, BrowserRouter, Link, Switch,
+} from 'react-router-dom';
 
 import Main from '../layouts/Main';
 import AllPosts from '../components/Stats/AllPosts';
@@ -11,16 +13,23 @@ const Blog = () => (
     title="Blog"
     description="Learn about Nandini Govindarajan's Blog."
   >
-    <div className="blog-main">
-      <div>
-        <BrowserRouter>
-          <div className="blog-content">
-            <Route component={AllPosts} path="/blog/" exact />
-            <Route component={OnePost} path="/:slug" />
-          </div>
-        </BrowserRouter>
+    <article className="post" id="resume">
+      <header>
+        <h2 data-testid="heading"><Link to="/blog">Blog</Link></h2>
+      </header>
+      <div className="blog-main">
+        <div>
+          <BrowserRouter>
+            <div className="blog-content">
+              <Switch>
+                <Route component={AllPosts} path="/blog/" exact />
+                <Route component={OnePost} path="/:slug" />
+              </Switch>
+            </div>
+          </BrowserRouter>
+        </div>
       </div>
-    </div>
+    </article>
   </Main>
 );
 
