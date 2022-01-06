@@ -22,7 +22,7 @@ const positions = [
     ],
   },
   {
-    company: 'Infosys',
+    company: 'Infosys(second stint)',
     position: 'Client Partner',
     link: 'http://infosys.com',
     daterange: 'April 2012 - July 2017',
