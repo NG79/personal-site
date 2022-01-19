@@ -3,7 +3,7 @@ const positions = [
     company: 'Genpact',
     position: 'Assistant Vice President (Director)',
     link: 'https://genpact.com',
-    daterange: 'August 2018 - September 2018',
+    daterange: 'August 2018 - September 2021',
     points: [
       'Product development of CORA Sales Assist - co-product owner of an AI powered solution for Deductions Management',
       'Product development of a Data-as-a-service offering -  roadmap and data ingestion strategy for CPG industry insights product',
